@@ -1,0 +1,25 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div>
+  <h1>Aanvragen!</h1>
+  <h2>Geef een aanvraag in</h2>
+  <form (ngSubmit)="nieuwe_Aanvraag()">
+    <div class="form-group" [formGroup]="aanvraag">
+      <label for="naam">Naam:</label>
+      <input type="text" formControlName="naam" /><br />
+      <label for="examen">Examen:</label>
+      <input type="text" formControlName="examen" /><br />
+      <label for="reden">Reden:</label>
+      <input type="text" formControlName="reden" /><br />
+    </div>
+    <br />
+    <button type="submit" class="btn btn-success">Geef in</button>
+  </form>
+
+  <ul>
+    <li *ngFor="let item of aanvragen">
+      Naam: {{ item.naam }} Examen: {{ item.examen }} Reden: {{ item.reden }}
+    </li>
+  </ul>
+</div>
+
+<router-outlet></router-outlet>
